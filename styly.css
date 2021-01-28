@@ -4,8 +4,6 @@
   transition: none !important;
   -webkit-transition: none !important;
   -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
 }
 
 .descr{
@@ -22,7 +20,7 @@
 } 
 
 body{
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-image: url(/img/y-so-serious.png);
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -57,8 +55,9 @@ body{
 }
 
 .emoji{
+  font-family: 'Brush Script MT', cursive;
   font-size: 70px;
   text-align: center;
-  padding: 70px 0;
+  padding: 30% 0;
   user-select: none;
 }
