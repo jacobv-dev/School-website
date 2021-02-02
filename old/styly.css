@@ -23,7 +23,7 @@
 } 
 
 body{
-  background-image: url(/img/y-so-serious.png);
+  background-image: url(../img/y-so-serious.png);
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
