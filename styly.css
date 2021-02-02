@@ -1,5 +1,9 @@
 /* NOTE IN CSS */
 
+*{
+  font-family: 'Brush Script MT', cursive;
+}
+
 .preload{
   transition: none !important;
   -webkit-transition: none !important;
@@ -9,7 +13,6 @@
 .descr{
   background: silver;
   opacity: 0.5;
-  font-family: 'Brush Script MT', cursive;
   font-size: 30px; 
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -55,7 +58,6 @@ body{
 }
 
 .emoji{
-  font-family: 'Brush Script MT', cursive;
   font-size: 70px;
   text-align: center;
   padding: 30% 0;
