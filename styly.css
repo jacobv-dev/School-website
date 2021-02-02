@@ -1,7 +1,6 @@
-/* NOTE IN CSS */
-
 *{
-  font-family: 'Brush Script MT', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  user-select: none;
 }
 
 .preload{
@@ -10,20 +9,8 @@
   -moz-transition: none !important;
 }
 
-.descr{
-  background: silver;
-  opacity: 0.5;
-  font-size: 30px; 
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  color: black; 
-  font-weight: bold;
-  text-align: center;
-  user-select: none;
-} 
-
 body{
-  background-image: url(/img/y-so-serious.png);
+  background: rgb(135,206,250); 
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -31,35 +18,28 @@ body{
   align-content: center;
 }
 
-.div1, .div2, .div3{
+h1, h2, h3{
+    color: darkmagenta;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h3{
+    font-size: 0.5rem;
+}
+
+p{
+    text-align: justify;
+    margin: 10px;
+}
+
+div.obsah{
+  max-width: 960px;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid white;
   border-radius: 25px;
-  width: 250px;
-  height: 250px;
-  margin: 20px;
-  box-shadow: 10px 6px 6px rgba(0, 0, 0, 0.4);
-  transition: 0.3s;
-}
-
-.div1{
-  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
-}
-
-.div2{
-  background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
-}
-
-.div3{
-  background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
-}
-
-.div1:hover, .div2:hover, .div3:hover{
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-
-.emoji{
-  font-size: 70px;
-  text-align: center;
-  padding: 30% 0;
-  user-select: none;
 }
