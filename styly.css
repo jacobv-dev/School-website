@@ -52,6 +52,7 @@ ul{
 ul ul{
   font-weight: normal;
   font-size: 1rem;
+  list-style-image: url(./img/search-icon.png);
 }
 
 li.jaro{
