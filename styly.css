@@ -52,6 +52,9 @@ ul{
 ul ul{
   font-weight: normal;
   font-size: 1rem;
+}
+
+ul ul ul{
   list-style-image: url(./img/search-icon.png);
 }
 
@@ -69,4 +72,10 @@ li.podzim{
 
 li.zima{
   list-style: "⛄ ";
+}
+
+ol{
+  font-weight: bolder;
+  font-size: 1.1rem;
+  list-style-type: upper-roman;
 }
