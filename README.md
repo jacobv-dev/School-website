@@ -1,6 +1,6 @@
 # School website - IT project
 
-* Hi, this is my first git repository and I want to test it with my school project. 
+* Hi, this is my first git repository and I want to test it with my school project
 
 * This is a website development with the help of HTML, CSS, JS and maybe **more**  in the future 😉
 

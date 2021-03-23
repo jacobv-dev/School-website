@@ -8,6 +8,11 @@ body{
   font-family: "Roboto";
 }
 
+/* SCHOVÁNÍ POSUVNÍKU*/
+::-webkit-scrollbar {
+  display: none;
+}
+
 div.obsah{
   margin: auto;
   margin-bottom: 20px;
@@ -42,7 +47,7 @@ div.hlavicka span{
 div.menu{
   margin: auto;
   max-width: 1200px;
-  height: 80px;
+  height: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -51,17 +56,21 @@ div.menu{
 
 div.menu a {
   color: maroon;
-  border-radius: 15px;
+  border-radius: 25px;
   border: 5px solid white;
   width: 20%;
   padding: 15px 0;
-  margin: 5px;
+  margin: auto;
   background: silver;
   text-align: center;
   text-decoration: none;
+  font-weight: bold;
 }
 
-div.menu a:hover{background: orange}
+div.menu a:hover{
+  transition: 0.3s ease-in-out;
+  transform: scale(1.20);
+}
 
 h1{text-align: center; font-size: 3rem;}
 
@@ -71,7 +80,7 @@ h1,h2{color: navy;}
 
 p{color: maroon; margin: 10px;}
 
-a{
+a.moje{
   text-decoration: none;
   color: maroon;
 }
