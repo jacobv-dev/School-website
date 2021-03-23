@@ -21,7 +21,7 @@ div.hlavicka{
   position: relative;
   margin: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  
   max-width: 1200px;
   height: 300px;
   border-radius: 25px;
@@ -38,6 +38,30 @@ div.hlavicka span{
   font-weight: bolder;
   user-select: none;
 }
+
+div.menu{
+  margin: auto;
+  max-width: 1200px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+div.menu a {
+  color: maroon;
+  border-radius: 15px;
+  border: 5px solid white;
+  width: 20%;
+  padding: 15px 0;
+  margin: 5px;
+  background: silver;
+  text-align: center;
+  text-decoration: none;
+}
+
+div.menu a:hover{background: orange}
 
 h1{text-align: center; font-size: 3rem;}
 
