@@ -65,11 +65,12 @@ div.menu a {
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.2rem;
+  transition: .3s ease-in-out;
 }
 
 div.menu a:hover{
-  transition: 0.3s ease-in-out;
-  transform: scale(1.20);
+  transform: scale(1.2);
 }
 
 h1{text-align: center; font-size: 3rem;}
