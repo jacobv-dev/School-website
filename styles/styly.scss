@@ -9,6 +9,8 @@
     display: none;
 }
 
+/* https://colorhunt.co/palette/149559 */
+
 $light: #525252;
 $dark: #414141;
 $darker: #313131;
@@ -152,6 +154,32 @@ nav li a { /* Jednotlivé položky menu */
     font-size: 3.5rem;
     cursor: default;
 }
+
+.gallery {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /*max-width: 1370px;*/
+  }
+  
+  .gallery a {
+    cursor: default;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gallery a img:hover {
+    box-shadow: 0 0 20px #3b3b3b;
+    cursor: pointer;
+    transform: scale(1.025);
+  }
+  
+  .gallery a img {
+    transition: ease-in .2s;
+    border-radius: 25px;
+  }
 
 @media screen and (max-width: 840px) { /* Pro mobilní telefony - 768px */
 
