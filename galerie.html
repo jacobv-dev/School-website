@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="cs">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Osobní profil Jakuba Vorla" lang="cs" />
-    <title>Beskydská galerie</title>
-    <link rel="shortcut icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/sunrise-over-mountains_1f304.png" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="styly.css">
-</head>
+    <head>
+        <title>Jakub Vorel • Galerie</title>
+        <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/styly.css">
+        <script src="https://kit.fontawesome.com/d72c987b8b.js" crossorigin="anonymous"></script> <!-- Font Awesome Icons -->
+        <link href="./css/lightbox.min.css" rel="stylesheet" />
+        <script src="./JavaScript/lightbox-plus-jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Monoton|Comfortaa' rel='stylesheet'>
+    </head>
 
-<body>
-    <div class="hlavicka"><span>Vítejte v Beskydech</span></div>
+    <body>
 
-    <div class="menu">
-        <a href="./">Úvod 👋</a>
-        <a href="galerie.html">Galerie 🖼️</a>
-        <a href="odkazy.html">Zajímavosti 🔎</a>
-        <a href="utility.html">Užitečnosti ⚙️</a>  
-    </div>    
-</body>
+        <nav>
+            <div class="logo">
+                <a href="./">JAKUB VOREL</a>
+            </div>
+            
+            <div class="menu-opener">
+                <div class="menu-opener-line"></div>
+                <div class="menu-opener-line"></div>
+                <div class="menu-opener-line"></div>
+            </div>
+            
+            <ul class="menu">
+                <li><a href="./">Domů 🏠</a></li>
+                <li><a class="active" href="./galerie.html">Galerie 🖼️</a></li>
+                <li><a href="#">Užitečnosti 💡</a></li>
+                <li><a href="#">Utility ⚙️</a></li>
+            </ul>
+        </nav>
+
+        <section id="galerie">
+
+            <div class="nadpis-galerie"><p>Galerie 🖼️</p></div>
+
+            <div class="images">
+
+            </div>
+
+        </section>
+        
+    <script type="text/javascript" src="app.js"></script>
+
+    <script>
+        lightbox.option({
+          'albumLabel': '',
+          'disableScrolling': true,
+        })
+    </script>
+
+    <!-- Lightbox2 by Lokesh Dhakar (https://lokeshdhakar.com/) is licensed under The MIT License (https://raw.githubusercontent.com/lokesh/lightbox2/master/LICENSE) -->
+
+    </body>
 
 </html>
