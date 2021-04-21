@@ -143,9 +143,8 @@ nav li a { /* Jednotlivé položky menu */
 /* ---------- GALERIE ---------- */
 
 #galerie { /* Druhá sekce stránky - GALERIE */
-    min-height: 100vh;
+    margin-top: 10vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -153,21 +152,20 @@ nav li a { /* Jednotlivé položky menu */
 .nadpis-galerie {
     font-size: 3.5rem;
     cursor: default;
+    margin-bottom: 20px;
 }
 
 .gallery {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /*max-width: 1370px;*/
+    max-width: 1350px;
   }
   
   .gallery a {
     cursor: default;
     width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 20px;
   }
   
   .gallery a img:hover {
@@ -293,7 +291,18 @@ nav li a { /* Jednotlivé položky menu */
 
     /* ---------- GALERIE ---------- */
 
+    #galerie {
+        margin-top: 15vh;
+    }
+
     .nadpis-galerie {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .gallery a, .gallery a img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
     }
 }

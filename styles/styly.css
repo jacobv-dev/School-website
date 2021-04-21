@@ -182,13 +182,10 @@ nav li a {
 /* ---------- GALERIE ---------- */
 #galerie {
   /* Druhá sekce stránky - GALERIE */
-  min-height: 100vh;
+  margin-top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -201,6 +198,7 @@ nav li a {
 .nadpis-galerie {
   font-size: 3.5rem;
   cursor: default;
+  margin-bottom: 20px;
 }
 
 .gallery {
@@ -212,21 +210,13 @@ nav li a {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  /*max-width: 1370px;*/
+  max-width: 1350px;
 }
 
 .gallery a {
   cursor: default;
   width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin: 20px;
 }
 
 .gallery a img:hover {
@@ -367,8 +357,23 @@ nav li a {
     text-align: center;
   }
   /* ---------- GALERIE ---------- */
+  #galerie {
+    margin-top: 15vh;
+  }
   .nadpis-galerie {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  .gallery a, .gallery a img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 85%;
   }
 }
 /*# sourceMappingURL=styly.css.map */
