@@ -3,13 +3,17 @@
 <html lang="cs">
 
     <head>
+        <meta charset="UTF-8">
         <title>Jakub Vorel</title>
         <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png" />
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./styles/styly.css">
         <script src="https://kit.fontawesome.com/d72c987b8b.js" crossorigin="anonymous"></script> <!-- Font Awesome Icons -->
         <link href='https://fonts.googleapis.com/css?family=Monoton|Comfortaa' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -28,15 +32,29 @@
             <ul class="menu">
                 <li><a class="active" href="./">Domů 🏠</a></li>
                 <li><a href="./galerie.html">Galerie 🖼️</a></li>
-                <li><a href="#">Užitečnosti 💡</a></li>
-                <li><a href="#">Utility ⚙️</a></li>
+                <li><a href="./odkazy.html">Užitečnosti 💡</a></li>
+                <li><a href="./utility.html">Utility ⚙️</a></li>
             </ul>
         </nav>
 
         <section class="profile">
 
             <div class="profile-pic">
-                <img src="./img/profile-pic.jpg">
+                <img src="./img/profile-pic.jpg" alt="">
+            </div>
+
+            <div class="changing">
+                
+                <div class="jsem">
+                    <p>Jsem</p>
+                </div>
+                        
+                        <div class="slider">
+                            <p>Jakub Vorel</p>
+                            <p id="student">Student</p>
+                            <p id="developer">WEB Developer</p>
+                            <p id="programmer">Programmer</p>
+                        </div>
             </div>
             
             <hr>
