@@ -10,10 +10,6 @@
         <link rel="stylesheet" href="./styles/styly.css">
         <script src="https://kit.fontawesome.com/d72c987b8b.js" crossorigin="anonymous"></script> <!-- Font Awesome Icons -->
         <link href='https://fonts.googleapis.com/css?family=Monoton|Comfortaa' rel='stylesheet'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -33,7 +29,7 @@
                 <li><a href="./">Domů 🏠</a></li>
                 <li><a href="./galerie.html">Galerie 🖼️</a></li>
                 <li><a href="./odkazy.html">Užitečnosti 💡</a></li>
-                <li><a class="active" href="./utility.html">Utility ⚙️</a></li>
+                <li><a class="active" href="./utility.php">Utility ⚙️</a></li>
             </ul>
         </nav>
 
@@ -41,11 +37,16 @@
 
             <div class="nadpis"><p>Utility</p></div>
 
-            <img src="./img/under-construction.svg" alt="Under Construction">
-            
-            <br>
-            
-            <div style="text-align: center;">Icon made by <a href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">Ultimatearm</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon.com</a></div>
+            <fieldssset>
+                <legend>Datum</legend>
+
+                <?php
+                    echo date("j. m. y - H:i:s"); //Poznááámka :)
+                    echo "<br>"; //Lájn brejk :)
+                    echo date("z"); //Den v roce :)
+                ?>
+
+            </fieldset>
 
         </section>
         
