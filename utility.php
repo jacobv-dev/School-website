@@ -28,7 +28,7 @@
             <ul class="menu">
                 <li><a href="./">Domů 🏠</a></li>
                 <li><a href="./galerie.html">Galerie 🖼️</a></li>
-                <li><a href="./odkazy.html">Užitečnosti 💡</a></li>
+                <li><a href="./zajimavosti.html">Zajímavosti 💡</a></li>
                 <li><a class="active" href="./utility.php">Utility ⚙️</a></li>
             </ul>
         </nav>
@@ -37,15 +37,18 @@
 
             <div class="nadpis"><p>Utility</p></div>
 
-            <fieldssset>
-                <legend>Datum</legend>
-
+            <fieldset>
+                <legend>Dnešní datum</legend>
                 <?php
-                    echo date("j. m. y - H:i:s"); //Poznááámka :)
-                    echo "<br>"; //Lájn brejk :)
-                    echo date("z"); //Den v roce :)
+                    echo date("j. m. Y");
                 ?>
+            </fieldset>
 
+            <fieldset>
+                <legend>Čas spuštění skriptu</legend>
+                <?php
+                    echo date("H:i:s");
+                ?>
             </fieldset>
 
         </section>

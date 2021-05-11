@@ -322,9 +322,19 @@ nav li a:hover::after {
     flex-direction: column;
 }
 
-.utility img {
-    width: 300px;
-    height: 300px;
+.utility fieldset {
+    width: 65%;
+    margin: 40px;
+    border: 1px solid $dark;
+    padding: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.utility fieldset legend {
+    padding: 0 .5rem;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 840px) { /* Pro mobilní telefony - 768px */
