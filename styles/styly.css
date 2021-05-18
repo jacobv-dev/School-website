@@ -426,7 +426,7 @@ nav li a:hover::after {
 .utility fieldset {
   width: 65%;
   margin: 40px;
-  border: 1px solid #414141;
+  border: 1.5px solid #414141;
   padding: .75rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -442,6 +442,7 @@ nav li a:hover::after {
 .utility fieldset legend {
   padding: 0 .5rem;
   font-weight: bold;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 840px) {

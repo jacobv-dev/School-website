@@ -325,7 +325,7 @@ nav li a:hover::after {
 .utility fieldset {
     width: 65%;
     margin: 40px;
-    border: 1px solid $dark;
+    border: 1.5px solid $dark;
     padding: .75rem;
     display: flex;
     align-items: center;
@@ -335,6 +335,7 @@ nav li a:hover::after {
 .utility fieldset legend {
     padding: 0 .5rem;
     font-weight: bold;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 840px) { /* Pro mobilní telefony - 768px */
