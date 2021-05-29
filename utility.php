@@ -38,37 +38,20 @@
             <div class="nadpis"><p>Utility</p></div>
 
             <fieldset>
-                <legend>Dnešní datum</legend>
+                <legend>Aktuální datum a čas</legend>
                 
                 <?php
-                    echo date("j. m. Y");
+                    echo date("j. m. Y") . " - " . date("H:i:s");
                 ?>
             </fieldset>
-
-            <fieldset>
-                <legend>Čas spuštění skriptu</legend>
-                
-                <?php
-                    echo date("H:i:s");
-                ?>
-            </fieldset>
-			
-			<fieldset>
-			  <legend>Funkce Time( )</legend>
-			  
-              <?php
-				  $s = time(); //aktuální čas v sekundách běžící od 1.1.1970
-				  echo "Aktuální počet sekund od 1. 1. 1970 = ".number_format($s,0,","," ");
-			  ?>
-			</fieldset>
-			
+						
 			<fieldset>
 			  <legend>Počet dnů do konce školního roku - 30. 6. <?php echo date("Y"); ?></legend>
 			  
               <?php
 			  	$aktrok = date("Y"); //Aktuální rok (2021)
 				$dnes = date("U"); //aktuální čas v sekundách běžící od 1.1.1970
-				$cil = mktime(0,0,0,6,30,$aktrok); //čas v budoucnu (vyjádřený v sekundách od 1.1.1970), funkce mktime nastavuje hod, min, sec, měs, den a rok
+				$cil = mktime(0,0,0,6,30,$aktrok); //čas v budoucnu (vyjádřený v sekundách od 1.1.1970)
 				$rozdil = $cil - $dnes; //časový úsek v sek mezi 2 událostmi
 				$dny = $rozdil/86400; //do proměnné dny vypočítáme počet dnů, 86400 = 1 den v sekundách
 				echo "Do konce školního roku zbývá ".round($dny)." dnů";
@@ -80,21 +63,28 @@
 			  
               <?php
 				$dnes = date("U"); //aktuální čas v sekundách běžící od 1.1.1970
-				$cil = mktime(8,0,0,4,2,2004); //čas v budoucnu (vyjádřený v sekundách od 1.1.1970), funkce mktime nastavuje hod, min, sec, měs, den a rok
+				$cil = mktime(8,0,0,4,2,2004); //čas v budoucnu (vyjádřený v sekundách od 1.1.1970)
 				$rozdil = $dnes - $cil; //časový úsek v sek mezi 2 událostmi
 				$dny = $rozdil/86400; //do proměnné dny vypočítáme počet dnů, 86400 = 1 den v sekundách
 				echo "Na světě jsem ".number_format($dny,0,","," ")." dnů";
 			  ?>
 			</fieldset>
 			
-			<fieldset>
-			  <legend>Co právě hraje na Rádiu Zlín?</legend>
+            <fieldset>
+			  <legend>Co právě hraje na Hitrádiu Zlín?</legend>
 			  
               <?php
-				$text = file_get_contents('http://www.radiozlin.cz/stream_live/hraje.txt');
-					if ($text == "0 -  ") { //Pokud se proměnná rovná (zprávy, počasí, vstupy) "0 -  ", tak se zobrazí zpráva "Už za chvíli..."
-						$text = "Už za chvíli...";};
-				echo $text;
+				$json = file_get_contents('https://radia.cz//data//pravehraje//new-322-currentnext.json');
+                $json_array = json_decode($json, true);
+                                
+                $autor = $json_array['current']['interpret'];
+                $song = $json_array['current']['song'];
+                $zacatek = substr($json_array['current']['begin'], 10);
+                $konec = substr($json_array['current']['end'], 10);
+
+                echo $autor . " - " . $song; // Vypsání Autora a Skladby
+                echo "<br>" . "<br>";
+                echo $zacatek . " - " . $konec; // Vypsání Začátku a Konce skladby
 			  ?>
 			</fieldset>
 			
@@ -102,15 +92,15 @@
 			  <legend>Výpočet BMI</legend>
 			  
               <form method="post" action="#BMI">
-                Zadejte hmotnost: <input name="m" placeholder="kg" type="text"/>
+                Zadejte hmotnost: <input name="m" placeholder="kg" type="text" required >
                 <br>
-                Zadejte výšku: <input name="v" placeholder="cm" type="text"/>
+                Zadejte výšku: <input name="v" placeholder="cm" type="text" required >
                 <br>
                 <input type="submit" name="btnSubmit" value="Odeslat">
 			  </form>
 				
                 <?php
-				if(isset($_POST["btnSubmit"])){
+                    if(isset($_POST["btnSubmit"])){
                     $m = $_POST["m"];
                     $v = $_POST["v"]/100;
                     $bmi = $m / ($v * $v);
@@ -120,6 +110,23 @@
 			    ?>
 			</fieldset>
 
+            <fieldset id="koule">
+                <legend>Výpočet objemu koule</legend>
+                
+                <form method="post" action="#koule">
+                r = <input type="text" name="r" placeholder="poloměr" required >
+                <input name="objem" type="submit" value="Vypočítej objem" >
+                </form>
+                
+                <?php
+                    if(isset($_POST["objem"])){
+                    $r = $_POST["r"];
+                    $objem = 4/3 * pi() * pow($r,3);  //výpočet objemu
+                    echo "<br>";
+                    echo "<b>Objem koule = ".round($objem,2)." jednotek krychlových</b>";
+                    }
+                ?>
+            </fieldset>
 
         </section>
         
