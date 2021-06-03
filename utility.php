@@ -41,7 +41,7 @@
                 <legend>Aktuální datum a čas</legend>
                 
                 <?php
-                    echo date("j. m. Y") . " - " . date("H:i:s");
+                    echo date("j. n. Y") . " - " . date("H:i:s");
                 ?>
             </fieldset>
 						
@@ -84,7 +84,19 @@
 
                 echo $autor . " - " . $song; // Vypsání Autora a Skladby
                 echo "<br>" . "<br>";
-                echo $zacatek . " - " . $konec; // Vypsání Začátku a Konce skladby
+                echo '<p style="font-size: 0.9em; letter-spacing: 0.05em;">' . $zacatek . " - " . $konec . '</p>'; // Vypsání Začátku a Konce skladby
+			  ?>
+			</fieldset>
+
+            <fieldset>
+			  <legend>Školní jídelníček</legend>
+			  
+              <?php
+                $url = file_get_contents('http://109.231.158.142:84/faces/login.jsp');
+                $first_step = explode( '<span style="color:green;">' , $url ); // Od HTML 
+                $second_step = explode('<span class="textGrey">' , $first_step[1]); // Do HTML
+
+                echo $second_step[0]; // Output textu ve výběru
 			  ?>
 			</fieldset>
 			
