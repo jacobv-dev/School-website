@@ -463,6 +463,40 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+.utilityhalf {
+  width: 65%;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  row-gap: 20px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.utilityhalf fieldset {
+  width: 95%;
+  height: 275px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 @media screen and (max-width: 840px) {
   /* Pro mobilní telefony - 768px */
   .menu-opener-line {
@@ -627,6 +661,18 @@ input[type=submit]:hover {
   /* ---------- UTILITY ---------- */
   .utility {
     margin-top: 15vh;
+  }
+  .utility fieldset {
+    width: 85%;
+    margin: 30px;
+  }
+  .utilityhalf {
+    width: 85%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 /*# sourceMappingURL=styly.css.map */

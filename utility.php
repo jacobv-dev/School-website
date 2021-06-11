@@ -35,7 +35,7 @@
 
         <section class="utility">
 
-            <div class="nadpis"><p>Utility</p></div>
+            <div class="nadpis"><p>PHP  Utility</p></div>
 
             <fieldset>
                 <legend>Aktuální datum a čas</legend>
@@ -93,12 +93,25 @@
 			  
               <?php
                 $url = file_get_contents('http://109.231.158.142:84/faces/login.jsp');
-                $first_step = explode( '<span style="color:green;">' , $url ); // Od HTML 
-                $second_step = explode('<span class="textGrey">' , $first_step[1]); // Do HTML
+                $first_step = explode( '<span style="color:green;">' , $url ); // Od HTML span
+                $second_step = explode('<span class="textGrey">' , $first_step[1]); // Do HTML span
 
                 echo $second_step[0]; // Output textu ve výběru
 			  ?>
 			</fieldset>
+
+            <fieldset>
+                <legend>Sportka</legend>
+                <?php 
+                    $a = range(1, 6);
+                    shuffle($a);
+                    foreach ($a as $x){
+                    echo "<img style=\"height: 80px; width: 80px; margin: 25px\"  src=\"img/kostky/".$x.".png\" >";
+                    }
+                ?>
+	        </fieldset>
+
+            <div class="utilityhalf">
 			
 			<fieldset id="BMI">
 			  <legend>Výpočet BMI</legend>
@@ -122,24 +135,41 @@
 			    ?>
 			</fieldset>
 
-            <fieldset id="koule">
-                <legend>Výpočet objemu koule</legend>
-                
-                <form method="post" action="#koule">
-                r = <input type="text" name="r" placeholder="poloměr" required >
-                <input name="objem" type="submit" value="Vypočítej objem" >
+			<fieldset id="cas">
+                <legend>Převod času</legend>
+                <form method="post" action="#cas">
+                Čas v sekundách: <input type="text" name="cas" placeholder="s" required >
+                <input type="submit" value="Vypočítej" />
                 </form>
-                
-                <?php
-                    if(isset($_POST["objem"])){
-                    $r = $_POST["r"];
-                    $objem = 4/3 * pi() * pow($r,3);  //výpočet objemu
+                <?php 
+                    if(isset($_POST["cas"])){
+                    $cas = $_POST["cas"];
+                    $h = floor($cas/3600); //odsekává des. část
+                    $m = floor(($cas - $h*3600)/60);
+                    $s = $cas - $h*3600 - $m*60;
                     echo "<br>";
-                    echo "<b>Objem koule = ".round($objem,2)." jednotek krychlových</b>";
+                    echo "<b>" . $cas." s = ".$h." h ".$m." m ".$s." s</b>";
                     }
                 ?>
             </fieldset>
-
+  
+	        <fieldset id="rychlost">
+                <legend>Převod rycholsti</legend>
+                <form method="post" action="#rychlost">
+                Rychlost: <input type="text" name="km" placeholder="km/h" required >
+                <input type="submit" value="Vypočítej m/s" />
+                </form>
+                <?php 
+                    if(isset($_POST["km"])){
+                    $km = $_POST["km"];
+                    $m = $km/"3.6";
+                    echo "<br>";
+                    echo "<b>" . $m . " m/s</b>";       
+                    }
+                ?>
+	        </fieldset>
+	
+        </div>
         </section>
         
     <script type="text/javascript" src="app.js"></script>
