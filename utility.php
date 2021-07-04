@@ -114,9 +114,7 @@
                 ?>
 	        </fieldset>
 
-            <div class="utilityhalf">
-			
-			<fieldset id="BMI">
+            <fieldset id="BMI">
 			  <legend>Výpočet BMI</legend>
 			  
               <form method="post" action="#BMI">
@@ -138,6 +136,8 @@
 			    ?>
 			</fieldset>
 
+            <div class="utilityhalf">
+			
 			<fieldset id="cas">
                 <legend>Převod času</legend>
                 <form method="post" action="#cas">
