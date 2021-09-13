@@ -438,7 +438,7 @@ nav li a:hover::after {
   text-align: left;
 }
 
-input[type=text] {
+input[type=text], [type=password], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -463,23 +463,109 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 2.5px;
+  margin: 0 5px;
+  background-clip: content-box;
+  border: 1px solid #414141;
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+
+input[type=radio]:checked {
+  background-color: #4CAF50;
+}
+
+input[type=checkbox] {
+  position: relative;
+  margin: 0 5px;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #414141;
+  border: 1px solid #414141;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+
+input[type=checkbox]::before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: .5px;
+  left: 6px;
+  width: 4px;
+  height: 12px;
+  border-style: solid;
+  border-color: #f6f6f6;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  opacity: 0;
+}
+
+input[type=checkbox]:checked {
+  color: #f6f6f6;
+  border-color: #414141;
+  background: #4CAF50;
+}
+
+input[type=checkbox]:checked::before {
+  opacity: 1;
+}
+
+/* DIV for flexing text and input (checkbox and radio) in utility tab */
+.vyber {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.jidelnicek {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
 .utilityhalf {
   width: 65%;
   margin-bottom: 20px;
   margin-top: 40px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
-  row-gap: 20px;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
 }
 
 .utilityhalf fieldset {
-  width: 95%;
   height: 275px;
   margin: auto;
   display: -webkit-box;
@@ -536,14 +622,14 @@ input[type=submit]:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     width: 75%;
-    left: 5%;
+    left: 20%;
     top: 50%;
-    -webkit-transform: translate(-5%, -50%);
-            transform: translate(-5%, -50%);
+    -webkit-transform: translate(-20%, -50%);
+            transform: translate(-20%, -50%);
   }
   .logo a {
     /* Samotný odkaz - Jakub Vorel */
@@ -633,7 +719,8 @@ input[type=submit]:hover {
     margin: 0 15px;
   }
   .info {
-    text-align: center;
+    text-align: justify;
+    font-size: 1rem;
   }
   /* ---------- GALERIE ---------- */
   #galerie {
@@ -667,7 +754,7 @@ input[type=submit]:hover {
     margin: 30px;
   }
   .utilityhalf {
-    width: 85%;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

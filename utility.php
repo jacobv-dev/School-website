@@ -45,13 +45,15 @@
                 ?>
             </fieldset>
 						
+            <!-- FIX $aktrok -->
+
 			<fieldset>
-			  <legend>Počet dnů do konce školního roku - 30. 6. <?php echo date("Y"); ?></legend>
+			  <legend>Počet dnů do konce školního roku - 30. 6. 2022</legend>
 			  
               <?php
 			  	$aktrok = date("Y"); //Aktuální rok (2021)
 				$dnes = date("U"); //aktuální čas v sekundách běžící od 1.1.1970
-				$cil = mktime(0,0,0,6,30,$aktrok); //čas v budoucnu (vyjádřený v sekundách od 1.1.1970)
+				$cil = mktime(0,0,0,6,30,2022); //čas v budoucnu (vyjádřený v sekundách od 1.1.1970)
 				$rozdil = $cil - $dnes; //časový úsek v sek mezi 2 událostmi
 				$dny = $rozdil/86400; //do proměnné dny vypočítáme počet dnů, 86400 = 1 den v sekundách
 				echo "Do konce školního roku zbývá ".round($dny)." dnů";
@@ -91,15 +93,15 @@
 			  ?>
 			</fieldset>
 
-            <fieldset>
+            <fieldset class="jidelnicek">
 			  <legend>Školní jídelníček</legend>
 			  
               <?php
                 $url = file_get_contents('http://109.231.158.142:84/faces/login.jsp');
-                $first_step = explode( '<span style="color:green;">' , $url ); // Od HTML span
-                $second_step = explode('<span class="textGrey">' , $first_step[1]); // Do HTML span
+                $obed1 = explode( '<div align="left">' , $url ); // Od HTML
+                $obed2 = explode( '<div class="jidelnicekDen">' , $obed1[1]); // Do HTML
 
-                echo $second_step[0]; // Output textu ve výběru
+                echo $obed2[0]; // Output textu ve výběru
 			  ?>
 			</fieldset>
 
@@ -173,6 +175,118 @@
 	        </fieldset>
 	
         </div>
+
+        <fieldset id="forms">
+                <legend>Formuláře</legend>
+
+                <form method="post" action="#forms">
+                    Jméno: <input type="text" placeholder="Jan" name="name" required/>
+                    Příjmení: <input type="text" placeholder="Novák" name="surname" required/>
+                    
+                    <br>
+                    
+                    Bydliště:
+                        <select name="bydliste">
+                            <option value="Karviná">Karviná</option>
+                            <option value="Orlová">Orlová</option>
+                            <option value="Havířov">Havířov</option>
+                            <option value="Český Těšín">Český Těšín</option>
+                            <option value="Bohumín">Bohumín</option>
+                        </select>  
+                    
+                    <br>
+
+                    Pohlaví:
+                    <br>
+                        <div class="vyber">Muž<input type="radio" name="pohlavi" value="Muž" checked/></div>
+                        <div class="vyber">Žena<input type="radio" name="pohlavi" value="Žena"/></div>
+                    
+                    Heslo: <input type="password" placeholder="👀" name="heslo" required/>
+                    
+                    <br>
+                    
+                    Zadej tvou výšku v cm: <input type="text" placeholder="cm" name="cm" required/>
+                    Zadej tvou hmotnost v kg: <input type="text" placeholder="kg" name="kg" required/>
+
+                    <br> 
+                
+                    Oblíbená jídla: 
+                    <br>
+                        <div class="vyber">Svíčková<input type="checkbox" name="jidlo0"/></div>
+                        <div class="vyber">Pizza<input type="checkbox" name="jidlo1"/></div>
+                        <div class="vyber">Párek<input type="checkbox" name="jidlo2"/></div>
+                        <div class="vyber">Rajská omáčka<input type="checkbox" name="jidlo3"/></div>
+                        <div class="vyber">Bramboráky<input type="checkbox" name="jidlo4"/></div>
+                
+
+                    <input class="ok" type="submit" value="OK"/>
+                </form>
+
+                <?php
+                    if(isset($_POST["name"]))
+                        echo "<b>Jméno: </b>" . $_POST ["name"] . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["surname"]))
+                        echo "<b>Příjmení: </b>" . $_POST ["surname"] . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["bydliste"]))
+                        echo "<b>Bydliště: </b>" . $_POST ["bydliste"] . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["pohlavi"]))
+                        echo "<b>Pohlaví: </b>" . $_POST ["pohlavi"] . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["heslo"]))
+                        echo "<b>Heslo: </b>" . $_POST ["heslo"] . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["cm"]))
+                        echo "<b>Výška: </b>" . $_POST ["cm"] . ' cm<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["kg"]))
+                        echo "<b>Hmotnost: </b>" . $_POST ["kg"] . ' kg<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["jidlo0"]) || isset($_POST["jidlo1"]) || isset($_POST["jidlo2"]) || isset($_POST["jidlo3"]) || isset($_POST["jidlo4"]))
+                        echo '<br>' . "<b>Oblíbená jídla:</b>" . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["jidlo0"]))
+                        echo "Svíčková 🥩" . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["jidlo1"]))
+                        echo "Pizza 🍕" . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["jidlo2"]))
+                        echo "Párek 🌭" . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["jidlo3"]))
+                        echo "Rajská omáčka 🍅" . '<br>'
+                ?>
+
+                <?php
+                    if(isset($_POST["jidlo4"]))
+                        echo "Bramboráky 🥔" . '<br>'
+                ?>
+            </fieldset>
 
         <p style="margin-bottom: 20px; cursor: default;">API Hitrádia Zlín převzato z webu Radia.cz</p>
         </section>

@@ -337,7 +337,7 @@ nav li a:hover::after {
     text-align: left;
 }
 
-input[type=text] {
+input[type=text], [type=password], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -362,19 +362,87 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+input[type=radio] {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 2.5px;
+    margin: 0 5px;
+    background-clip: content-box;
+    border: 1px solid $dark;
+    background-color: $light;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+    &:checked {
+        background-color: $green;
+    }
+}
+
+input[type=checkbox] {
+    position: relative;
+    margin: 0 5px;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $dark;
+    border: 1px solid $dark;
+    border-radius: 4px;
+    appearance: none;
+    outline: 0;
+    cursor: pointer;
+    transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+    
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      top: .5px;
+      left: 6px;
+      width: 4px;
+      height: 12px;
+      border-style: solid;
+      border-color: $light;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+    
+    &:checked {
+      color: $light;
+      border-color: $dark;
+      background: $green;
+      
+      &::before {
+        opacity: 1;
+      }
+    }
+}
+
+/* DIV for flexing text and input (checkbox and radio) in utility tab */
+.vyber {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.jidelnicek {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
 .utilityhalf{
     width: 65%;
     margin-bottom: 20px;
     margin-top: 40px;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    row-gap: 20px;
-    justify-items: center;
-    align-items: center;
+    display: flex;
+    column-gap: 20px;
 }
 
 .utilityhalf fieldset{
-    width: 95%;
     height: 275px;
     margin: auto;
     display: flex;
@@ -420,11 +488,11 @@ input[type=submit]:hover {
     .logo { /* 50% div v navbaru */
         position: absolute;
         display: flex;
-        justify-content: right;
+        justify-content: left;
         width: 75%;
-        left: 5%;
+        left: 20%;
         top: 50%;
-        transform: translate(-5%, -50%);
+        transform: translate(-20%, -50%);
     }
 
     .logo a { /* Samotný odkaz - Jakub Vorel */
@@ -509,7 +577,8 @@ input[type=submit]:hover {
     }
 
     .info {
-        text-align: center;
+        text-align: justify;
+        font-size: 1rem;
     }
 
     /* ---------- GALERIE ---------- */
@@ -547,8 +616,8 @@ input[type=submit]:hover {
     }
 
     .utilityhalf{
-        width: 85%;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
-    }    
+    }   
 }
