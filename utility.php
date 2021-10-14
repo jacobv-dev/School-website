@@ -8,7 +8,7 @@
         <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/man-raising-hand-light-skin-tone_1f64b-1f3fb-200d-2642-fe0f.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./styles/styly.css">
-        <script src="https://kit.fontawesome.com/d72c987b8b.js" crossorigin="anonymous"></script> <!-- Font Awesome Icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link href='https://fonts.googleapis.com/css?family=Monoton|Comfortaa' rel='stylesheet'>
     </head>
 
@@ -71,26 +71,26 @@
 				echo "Na světě jsem ".number_format($dny,0,","," ")." dnů";
 			  ?>
 			</fieldset>
-			
-            <fieldset>
-			  <legend>Co právě hraje na Hitrádiu Zlín?</legend>
-			  
-              <?php
-				$json = file_get_contents('https://radia.cz//data//pravehraje//new-322-currentnext.json');
-                $json_array = json_decode($json, true);
-                                
-                $autor = $json_array['current']['interpret'];
-                $song = $json_array['current']['song'];
-                $cover = $json_array['current']['image'];
-                $zacatek = substr($json_array['current']['begin'], 10);
-                $konec = substr($json_array['current']['end'], 10);
 
-                echo "<a style='cursor: default;' href=\"$cover\" target='_blank'>" . "<img style=\"height: 200px; width: 200px; margin: 25px; cursor: pointer; margin: 0 0 25px 0;\" src=" . $cover . " ></a>";
-                echo "<br>";
-                echo $autor . " - " . $song; // Vypsání Autora a Skladby
-                echo "<br>" . "<br>";
-                echo '<p style="font-size: 0.9em; letter-spacing: 0.05em;">' . $zacatek . " - " . $konec . '</p>'; // Vypsání Začátku a Konce skladby
-			  ?>
+            <fieldset id="radiozlin">
+                <legend>Co právě hraje na Hitrádiu Zlín?</legend>
+
+                <?php
+                    $json = file_get_contents('https://radia.cz//data//pravehraje//new-322-currentnext.json');
+                    $json_array = json_decode($json, true);
+                                                
+                    $autor = $json_array['current']['interpret'];
+                    $song = $json_array['current']['song'];
+                    $cover = $json_array['current']['image'];
+                    $zacatek = substr($json_array['current']['begin'], 10);
+                    $konec = substr($json_array['current']['end'], 10);
+
+                    echo "<a style='cursor: default;' href=\"$cover\" target='_blank'>" . "<img style=\"height: 200px; width: 200px; margin: 25px; cursor: pointer; margin: 0 0 25px 0;\" src=" . $cover . " ></a>";
+                    echo "<br>";
+                    echo $autor . " - " . $song;
+                    echo "<br>" . "<br>";
+                    echo '<p style="font-size: 0.9em; letter-spacing: 0.05em;">' . $zacatek . " - " . $konec . '</p>';
+                ?>
 			</fieldset>
 
             <fieldset class="jidelnicek">
@@ -98,9 +98,13 @@
 			  
               <?php
                 $url = file_get_contents('http://109.231.158.142:84/faces/login.jsp');
+                $datum1 = explode( '<span class="important">' , $url ); // Od HTML
+                $datum2 = explode( '</span>' , $datum1[1]); // Do HTML
                 $obed1 = explode( '<div align="left">' , $url ); // Od HTML
                 $obed2 = explode( '<div class="jidelnicekDen">' , $obed1[1]); // Do HTML
 
+                echo $datum2[0];
+                echo "<br>";
                 echo $obed2[0]; // Output textu ve výběru
 			  ?>
 			</fieldset>

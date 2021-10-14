@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./styles/styly.css">
         <script src="https://kit.fontawesome.com/d72c987b8b.js" crossorigin="anonymous"></script> <!-- Font Awesome Icons -->
         <link href='https://fonts.googleapis.com/css?family=Monoton|Comfortaa' rel='stylesheet'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
@@ -76,6 +76,22 @@
         </section>
         
     <script type="text/javascript" src="app.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".slider").slick({
+            vertical: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 350,
+            arrows: false,
+            swipe: false,
+            infinite: true,
+            pauseOnHover: false,
+            });
+        });
+    </script>
+
     </body>
 
 </html>

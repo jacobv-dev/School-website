@@ -1,4 +1,4 @@
-// Galerie
+// Mobile menu
 
 const menuopener = document.querySelector(".menu-opener");
 const menu = document.querySelector(".menu");
@@ -12,20 +12,16 @@ menuopener.addEventListener("click", () => {
     links.forEach(link => {
         link.classList.toggle("fade")
     });
+
+    document.body.classList.toggle('lock-scroll');
     
 });
 
-// Scrollování textu na main page
+// Radio refresh
 
-$(document).ready(function(){
-    $(".slider").slick({
-    vertical: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 350,
-    arrows: false,
-    swipe: false,
-    infinite: true,
-    pauseOnHover: false,
-    });
-});
+function song_info() {
+    $("#radiozlin").load("Radio.php");
+};
+
+// Refresh song_info() every 30 seconds
+setInterval("song_info()", 30000);
