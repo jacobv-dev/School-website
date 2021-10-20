@@ -103,8 +103,9 @@
                 $obed1 = explode( '<div align="left">' , $url ); // Od HTML
                 $obed2 = explode( '<div class="jidelnicekDen">' , $obed1[1]); // Do HTML
 
-                echo $datum2[0];
-                echo "<br>";
+                $datum = $datum2[0];
+
+                echo '<p style="font-weight: bold;">' . str_replace('.', ". ", $datum) . '</p>';
                 echo $obed2[0]; // Output textu ve výběru
 			  ?>
 			</fieldset>
@@ -124,20 +125,61 @@
 			  <legend>Výpočet BMI</legend>
 			  
               <form method="post" action="#BMI">
-                Zadejte hmotnost: <input name="m" placeholder="kg" type="text" required >
+                Zadejte hmotnost: <input name="m" placeholder="kg" type="number" required >
                 <br>
-                Zadejte výšku: <input name="v" placeholder="cm" type="text" required >
+                Zadejte výšku: <input name="v" placeholder="cm" type="number" required >
                 <br>
                 <input type="submit" name="btnSubmit" value="Odeslat">
 			  </form>
 				
                 <?php
                     if(isset($_POST["btnSubmit"])){
-                    $m = $_POST["m"];
-                    $v = $_POST["v"]/100;
-                    $bmi = $m / ($v * $v);
-                    echo "<br>";
-                    echo "<b>BMI = ".round($bmi,2)."</b>";
+                        $m = $_POST["m"];
+                        $v = $_POST["v"]/100;
+                        $bmi = $m / ($v * $v);
+                        echo "<br>";
+                        echo "<b>BMI = ".round($bmi,2)."</b>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<div style='display: flex; justify-content: center;'>
+                                    <table cellspacing='25'>
+                                        <tr>
+                                            <th>BMI</th>
+                                            <th>Kategorie</th>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Méně než 16,4</td>
+                                            <td>Těžká podváha</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>16,5 - 18,4</td>
+                                            <td>Podváha</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>18,5 - 24,9</td>
+                                            <td>Norma</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25,0 - 29,9</td>
+                                            <td>Nadváha</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30,0 - 34,9</td>
+                                            <td>Obezita 1. stupně</td>
+                                        </tr>
+                                        <tr>
+                                            <td>35,0 - 39,9</td>
+                                            <td>Obezita 2. stupně</td>
+                                        </tr>
+                                        <tr>
+                                            <td>40,0 a více</td>
+                                            <td>Obezita 3. stupně</td>
+                                        </tr>
+                                    </table>
+                                </div>";
 			    }
 			    ?>
 			</fieldset>
@@ -147,7 +189,7 @@
 			<fieldset id="cas">
                 <legend>Převod času</legend>
                 <form method="post" action="#cas">
-                Čas v sekundách: <input type="text" name="cas" placeholder="s" required >
+                Čas v sekundách: <input type="number" name="cas" placeholder="s" required >
                 <input type="submit" value="Vypočítej" />
                 </form>
                 <?php 
@@ -165,7 +207,7 @@
 	        <fieldset id="rychlost">
                 <legend>Převod rycholsti</legend>
                 <form method="post" action="#rychlost">
-                Rychlost: <input type="text" name="km" placeholder="km/h" required >
+                Rychlost: <input type="number" name="km" placeholder="km/h" required >
                 <input type="submit" value="Vypočítej m/s" />
                 </form>
                 <?php 
@@ -209,8 +251,8 @@
                     
                     <br>
                     
-                    Zadej tvou výšku v cm: <input type="text" placeholder="cm" name="cm" required/>
-                    Zadej tvou hmotnost v kg: <input type="text" placeholder="kg" name="kg" required/>
+                    Zadej tvou výšku v cm: <input type="number" placeholder="cm" name="cm" required/>
+                    Zadej tvou hmotnost v kg: <input type="number" placeholder="kg" name="kg" required/>
 
                     <br> 
                 
