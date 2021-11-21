@@ -3,6 +3,12 @@
 <?php
 	$json = file_get_contents('https://radia.cz//data//pravehraje//new-322-currentnext.json');
     $json_array = json_decode($json, true);
+
+    $moderator_url = file_get_contents('https://hitradio.cz/content/static/hitradio-zlin.html');
+    $moderator1 = explode( '<div class="moderator">' , $moderator_url );
+    $moderator2 = explode( '</div>[2]' , $moderator1[1]);
+
+    $moderator = $moderator2[0];
                                 
     $autor = $json_array['current']['interpret'];
     $song = $json_array['current']['song'];
@@ -10,8 +16,8 @@
     $zacatek = substr($json_array['current']['begin'], 10);
     $konec = substr($json_array['current']['end'], 10);
 
-    echo "<a style='cursor: default;' href=\"$cover\" target='_blank'>" . "<img style=\"height: 200px; width: 200px; margin: 25px; cursor: pointer; margin: 0 0 25px 0;\" src=" . $cover . " ></a>";
-    echo "<br>";
+    echo $moderator;
+    echo "<a style='cursor: default; height: 200px; width: 200px; display: block; margin: 25px auto;' href=\"$cover\" target='_blank'>" . "<img style=\"height: 200px; width: 200px; cursor: pointer;\" alt=\"Cover image\" src=" . $cover . " ></a>";
     echo $autor . " - " . $song;
     echo "<br>" . "<br>";
     echo '<p style="font-size: 0.9em; letter-spacing: 0.05em;">' . $zacatek . " - " . $konec . '</p>';

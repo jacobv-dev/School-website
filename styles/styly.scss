@@ -72,7 +72,6 @@ nav li a.active { /* Zelené pozadí aktivní stránky */
 nav li a { /* Jednotlivé položky menu */
     text-decoration: none;
     color: white;
-    font-weight: bold;
     height: 100%;
     display: flex;
     align-items:center;
@@ -419,6 +418,33 @@ input[type=checkbox] {
     }
 }
 
+// Aktuální moderátor
+
+.program {
+    margin: 5px 0 10px 0;
+}
+
+.program-remanining-container {
+    width: 300px;
+    margin: auto;
+}
+
+.program-remanining-container .progress {
+    height: 4px;
+    margin-bottom: 0;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+
+.progress-meter {
+    position: relative;
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: $green;
+    border-radius: 20px;
+}
+
 /* DIV for flexing text and input (checkbox and radio) in utility tab */
 .vyber {
     margin: 20px auto;
@@ -617,6 +643,10 @@ input[type=checkbox] {
     .utility fieldset {
         width: 85%;
         margin: 30px;
+    }
+
+    .program-remanining-container {
+        width: 200px;
     }
 
     .utilityhalf{
