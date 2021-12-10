@@ -17,11 +17,11 @@ menuopener.addEventListener("click", () => {
     
 });
 
-// Radio refresh
+// Radio refresh function
 
 function song_info() {
-    $("#radiozlin").load("Radio.php");
+    $("#radiozlin").load("./Components/Radio.php");
 };
 
-// Refresh song_info() every 30 seconds
-setInterval("song_info()", 30000);
+// Refresh song_info() every x seconds
+setInterval("song_info()", 15 * 1000);
