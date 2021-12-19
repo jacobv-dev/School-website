@@ -420,8 +420,12 @@ input[type=checkbox] {
 
 // Aktuální moderátor
 
+#radiozlin strong {
+    line-height: 1.75rem;
+}
+
 .program {
-    margin: 5px 0 10px 0;
+    margin: 2px 0 10px 0;
 }
 
 .program-remanining-container {

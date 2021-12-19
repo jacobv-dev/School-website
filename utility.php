@@ -66,6 +66,12 @@
             ?>
         </fieldset>
 
+        <fieldset id="random-meme">
+
+            <?php include './Components/Meme.php'; ?>
+        
+        </fieldset>
+
         <fieldset id="radiozlin">
 
             <?php include './Components/Radio.php'; ?>
