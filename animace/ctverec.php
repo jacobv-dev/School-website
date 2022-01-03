@@ -47,7 +47,8 @@
               top: 30%;
               left: 35%;
               background: rgba(244,164,9,0.02);
-              border: 2px solid rgba(244,164,9,0.025); 
+              border: 2px solid rgba(244,164,9,0.025);
+              border-radius: ", $i + 15, "px; 
               width: ", $i * 5 + 100, "px;
               height: ", $i * 5 + 100, "px;
               transform: rotate(", $i * 10, "deg);
