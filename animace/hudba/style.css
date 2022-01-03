@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #222;
+  font-family: "Open Sans", sans-serif;
+}
+
+svg {
+  width: 70vw;
+  height: 60vh;
+}
+
+#ruce {
+  animation: 2.5s infinite ruce;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes ruce {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#progress {
+  animation: 5s infinite progress;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(0vw);
+  }
+
+  50% {
+    transform: translateX(8vw);
+  }
+
+  100% {
+    transform: translateX(0vw);
+  }
+}

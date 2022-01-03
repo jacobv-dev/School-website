@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+}
+
+.plast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  width: 22rem;
+  background: #201e1e;
+  border-radius: 1.5rem;
+}
+
+.cervena, .zluta, .zelena {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+}
+
+.cervena {
+  background-color: #cc3232;
+  -webkit-animation: cervena 14s infinite;
+          animation: cervena 14s infinite;
+}
+
+.zluta {
+  background-color: #e7b416;
+  -webkit-animation: zluta 14s infinite;
+          animation: zluta 14s infinite;
+}
+
+.zelena {
+  background-color: #2dc937;
+  -webkit-animation: zelena 14s infinite;
+          animation: zelena 14s infinite;
+}
+
+/* ANIMACE */
+@-webkit-keyframes zelena {
+  0% {
+    opacity: 1;
+  }
+  /* Rozsviceni refresh */
+  33% {
+    opacity: 1;
+  }
+  35% {
+    opacity: .1;
+  }
+  /*Zhasnuti pred zlutou*/
+  100% {
+    opacity: .1;
+  }
+}
+@keyframes zelena {
+  0% {
+    opacity: 1;
+  }
+  /* Rozsviceni refresh */
+  33% {
+    opacity: 1;
+  }
+  35% {
+    opacity: .1;
+  }
+  /*Zhasnuti pred zlutou*/
+  100% {
+    opacity: .1;
+  }
+}
+
+@-webkit-keyframes zluta {
+  0% {
+    opacity: .1;
+  }
+  33% {
+    opacity: .1;
+  }
+  35% {
+    opacity: 1;
+  }
+  /* Rozsviceni po zelene */
+  50% {
+    opacity: 1;
+  }
+  52% {
+    opacity: .1;
+  }
+  /* Zhasnuti pred cervenou */
+  88% {
+    opacity: .1;
+  }
+  90% {
+    opacity: 1;
+  }
+  /* Rozsviceni pred zelenou */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zluta {
+  0% {
+    opacity: .1;
+  }
+  33% {
+    opacity: .1;
+  }
+  35% {
+    opacity: 1;
+  }
+  /* Rozsviceni po zelene */
+  50% {
+    opacity: 1;
+  }
+  52% {
+    opacity: .1;
+  }
+  /* Zhasnuti pred cervenou */
+  88% {
+    opacity: .1;
+  }
+  90% {
+    opacity: 1;
+  }
+  /* Rozsviceni pred zelenou */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cervena {
+  0% {
+    opacity: .1;
+  }
+  50% {
+    opacity: .1;
+  }
+  52% {
+    opacity: 1;
+  }
+  /* Rozsviceni po zlute */
+  100% {
+    opacity: 1;
+  }
+  /* Sviti pred opakovanim */
+}
+
+@keyframes cervena {
+  0% {
+    opacity: .1;
+  }
+  50% {
+    opacity: .1;
+  }
+  52% {
+    opacity: 1;
+  }
+  /* Rozsviceni po zlute */
+  100% {
+    opacity: 1;
+  }
+  /* Sviti pred opakovanim */
+}
