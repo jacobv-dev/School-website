@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%);
+  font-family: "Open Sans", sans-serif;
+}
+
+svg {
+  animation: 15s infinite cely-padak;
+  width: 300px;
+  height: 600px;
+}
+
+@keyframes cely-padak {
+  0% {
+    transform: rotate(0deg) translate(-50vw, -50vh);
+  }
+
+  20% {
+    transform: rotate(-15deg) translate(0vw, -35vh);
+  }
+
+  40% {
+    transform: rotate(7deg) translate(-35vw, -15vh);
+  }
+
+  60% {
+    transform: rotate(-10deg) translate(35vw, 5vh);
+  }
+
+  80% {
+    transform: rotate(10deg) translate(5vw, 25vh);
+  }
+
+  100% {
+    transform: rotate(-10deg) translate(50vw, 100vh);
+  }
+}
