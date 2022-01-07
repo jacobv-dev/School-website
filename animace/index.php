@@ -6,6 +6,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="refresh" content="30;url=./padak/">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <meta name="keywords" content="animace" lang="cs" />
   <meta name="author" content="Jakub Vorel" />
@@ -56,8 +57,8 @@
               </div>";
     ?>
 
-    <div style="color: white; position: fixed; bottom: 5px; right: 5px; ">Jakub Vorel, 2021</div>
-    <div style="color: white; position: fixed; left: 5px; bottom: 5px; ">PHP + HTML + CSS + JS</div>
+    <div style="color: white; position: fixed; bottom: 5px; right: 5px; ">Jakub Vorel, 2022</div>
+    <div style="color: white; position: fixed; left: 5px; bottom: 5px; ">PHP + HTML + CSS</div>
   </div>
 
   </div>

@@ -308,7 +308,7 @@
             ?>
         </fieldset>
 
-        <p style="margin-bottom: 20px; cursor: default; text-align: center;">API Hitrádia Zlín převzato z webů <br /> Hitradio.cz a Radia.cz</p>
+        <p style="margin-bottom: 20px; cursor: default; text-align: center;">API Hitrádia Orion převzato z webů <br /> Hitradio.cz a Radia.cz</p>
     </section>
 
     <script type="text/javascript" src="app.js"></script>

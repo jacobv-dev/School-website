@@ -1,10 +1,10 @@
-<legend>Co právě hraje na Hitrádiu Zlín?</legend>
+<legend>Co právě hraje na Hitrádiu Orion?</legend>
 
 <?php
-	$json = file_get_contents('https://radia.cz//data//pravehraje//new-322-currentnext.json');
+	$json = file_get_contents('https://data.radia.cz/data/pravehraje/new-67-currentnext.json');
     $json_array = json_decode($json, true);
 
-    $moderator_url = file_get_contents('https://hitradio.cz/content/static/hitradio-zlin.html');
+    $moderator_url = file_get_contents('https://hitradio.cz/content/static/hitradio-orion.html');
     $moderator1 = explode( '<div class="moderator">' , $moderator_url );
     $moderator2 = explode( '</div>[2]' , $moderator1[1]);
 
