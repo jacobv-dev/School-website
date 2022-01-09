@@ -13,11 +13,21 @@ body {
   min-height: 100vh;
   background: #222;
   font-family: "Open Sans", sans-serif;
+  position: relative;
 }
 
 svg {
-  width: 70vw;
-  height: 60vh;
+  width: 1536px;
+  height: 756px;
+}
+
+#song-info {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 15.5vh;
+  right: 20vw;
+  font-weight: bold;
 }
 
 #ruce {
@@ -40,10 +50,19 @@ svg {
   }
 }
 
+#song-album {
+  display: none;
+}
+
 #progress {
   animation: 5s infinite progress;
   transform-origin: center;
   transform-box: fill-box;
+  display: none;
+}
+
+#progressbar {
+  display: none;
 }
 
 @keyframes progress {
